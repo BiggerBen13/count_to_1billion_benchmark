@@ -12,10 +12,10 @@ fn count_to_billion() -> u64 {
 }
 
 fn main() {
-    let now = time::Instant::now();
+    // let now = time::Instant::now();
 
     let count = count_to_billion();
     
-    let duration = time::Instant::elapsed(&now);
-    println!("Looping {} times in rust took: {}", count, duration.as_secs_f64())
+    // let duration = time::Instant::elapsed(&now);
+    // println!("Looping {} times in rust took: {}", count, duration.as_secs_f64())
 }
