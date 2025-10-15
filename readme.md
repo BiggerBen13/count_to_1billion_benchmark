@@ -32,5 +32,5 @@ I hope you took something away from this repo if just that people like talk with
 | `./out_c_noopt` | 639.0 ± 3.1 | 627.1 | 648.9 | 1.00 |
 | `./out_rust_noopt` | 957.2 ± 7.3 | 943.4 | 1022.4 | 1.50 ± 0.01 |
 
-> [!INFO]
+> [!NOTE]
 > Run on a m1pro macbook with 16GB of ram
