@@ -7,12 +7,12 @@ To make a point I decided to actually compare both languages in the point shown,
 I've used c instead of cpp but in this case (although definitely not all cases) there should be minimal differences.
 Also note that this project doesn't use cargo as it isn't actually required to compile rust code this simple and would've just inflated the size of the repo.
 
-# Running
+## Running
 To run both tests simply do `make run`
 
 To run just one of the languages do either `make run_rust` or `make run_c`
 
-# Conclusion
+## Conclusion
 
 If compiling optimized code, both languages tend to perform very well, almost too well, this is because both compilers are smart enough to recognize that the loop is only being used to produce the same number always.
 Therefore they just replace the function call with a constant. The reason the timer for the rust-code looks like it's performing better is because the `std::time` timers are more percise than the clock function avaliable in the c-library.
@@ -21,3 +21,16 @@ I could probably use cpp for more accurate timers in a c-like language but I can
 If however you turn off optimizations, the c code runs faster than the rust code by about 50%.
 
 I hope you took something away from this repo if just that people like talk without having any clue what they're talking about.
+
+## Benchmarking
+
+> [!NOTE]
+> I decided to actually benchmark the unoptimized versions using [hyperfine](https://github.com/sharkdp/hyperfine), the results are below.
+
+| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
+|:---|---:|---:|---:|---:|
+| `./out_c_noopt` | 639.0 ± 3.1 | 627.1 | 648.9 | 1.00 |
+| `./out_rust_noopt` | 957.2 ± 7.3 | 943.4 | 1022.4 | 1.50 ± 0.01 |
+
+> [!INFO]
+> Run on a m1pro macbook with 16GB of ram
