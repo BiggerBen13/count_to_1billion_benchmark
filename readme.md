@@ -12,7 +12,7 @@ To run just one of the languages do `make run_<language>` or `make run_<language
 
 ## Benchmarking
 
-see (table)[./table.md]
+see [table](./timings.md)
 
 > [!NOTE]
 > Run on a m1pro macbook with 16GB of ram
