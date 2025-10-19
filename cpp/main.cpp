@@ -1,7 +1,6 @@
 #include <chrono>
 #include <iostream>
-#include <cinttypes>
-#include <ratio>
+#include <numeric>
 
 uint64_t count_to_billion()
 {
@@ -19,7 +18,10 @@ int main(int argc, char *argv[])
 
         auto t2 = std::chrono::high_resolution_clock::now();
 
-        std::chrono::duration<double, std::nano> duration = (t2-t1);
+        // auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(t2-t1);
+        std::chrono::duration<long double> print_duration = t2 - t1;
 
-        std::cout << "Looping " << count << " times in cpp took: " << duration.count() << std::endl;
+        // std::cout.precision(20);
+
+        std::cout << "Looping " << count << " times in cpp took: " << print_duration.count() << std::endl;
 }

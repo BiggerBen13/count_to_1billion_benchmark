@@ -19,3 +19,6 @@ $(RUST_BIN)_noopt: $(RUST_SRC)
 
 $(RUST_BIN)_asm: $(RUST_SRC)
 	rustc main.rs -C opt-level=0 -C debuginfo=0 --emit=asm -Z verbose-asm=yes -o $@.a
+
+ALL_BINS += $(RUST_BIN)
+ALL_BINS += $(RUST_BIN)_noopt

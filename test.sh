@@ -13,4 +13,4 @@ done
 
 echo $EXE_LANGS
 
-hyperfine --sort mean-time $EXE_LANGS --export-markdown ../timings.md
+hyperfine --warmup 2 --min-runs 2 --sort mean-time $EXE_LANGS --export-markdown ../timings.md

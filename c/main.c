@@ -11,12 +11,12 @@ uint64_t count_to_billion()
 
 int main(int argc, char *argv[argc + 1])
 {
-	time_t t = time(NULL);
+	clock_t t = clock();
 
 	uint64_t count = count_to_billion();
 
 	t = clock() - t;
 
 	double duration = ((double)t) / CLOCKS_PER_SEC;
-	printf("Looping %llu times in c took: %f", count, duration);
+	printf("Looping %llu times in c took: %f\n", count, duration);
 }
