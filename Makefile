@@ -1,32 +1,17 @@
-RUST_BIN = out_rust
-C_BIN = out_c
+MAKEFILES = $(shell find . -mindepth 2 -name Makefile)
+ROOT_DIR = ${PWD}
+OUT_DIR = $(ROOT_DIR)/out
+LANGUAGES = cpp rust python c
 
-run: run_rust run_c
+# test:
+# 	@echo $(MAKEFILES)
 
-run_c: $(C_BIN)
-	./$(C_BIN)
+include $(MAKEFILES)
 
-run_rust: $(RUST_BIN)
-	./$(RUST_BIN)
+# run_unoptimized: run_rust_noopt run_c_noopt
 
-$(C_BIN): main.c
-	$(CC) -O3 main.c -o $@
+# asm: $(RUST_BIN)_asm $(C_BIN)_asm
 
-$(RUST_BIN): main.rs
-	rustc -O main.rs -o $@
-
-run_unoptimized: run_rust_noopt run_c_noopt
-
-run_c_noopt: $(C_BIN)_noopt
-	./$(C_BIN)_noopt
-
-run_rust_noopt: $(RUST_BIN)_noopt
-	./$(RUST_BIN)_noopt
-
-
-$(C_BIN)_noopt: main.c
-	$(CC) -O0 main.c -o $@
-
-$(RUST_BIN)_noopt: main.rs
-	rustc -C opt-level=0 main.rs -o $@
-
+dirs:
+	@echo "Creating dir $(OUT_DIR)"
+	@mkdir -p $(OUT_DIR)

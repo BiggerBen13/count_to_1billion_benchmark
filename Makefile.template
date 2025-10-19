@@ -1,0 +1,23 @@
+# LANG := <INSERT LANGUAGE NAME HERE> 
+%ULANG%_SRC_FILE := <INSERT SOURCE FILE HERE>
+
+$%ULANG%_DIR := $(ROOT_DIR)/%LLANG%
+$%ULANG%_BIN := $(OUT_DIR)/out_%LLANG%
+$%ULANG%_SRC := $(%ULANG%_DIR)/$(%ULANG%_SRC_FILE)
+
+run_%LLANG%: $(%ULANG%_BIN)
+	# Run command here
+
+$(%ULANG%_BIN): $(%ULANG%_SRC)
+	# Compile Command here
+	
+run_%LLANG%_noopt: $(%ULANG%_BIN)_noopt
+	# Unoptimized run command
+	
+$(%ULANG%_BIN)_noopt: $(%ULANG%_SRC)
+	# Unoptimized compile command
+
+$(%ULANG%_BIN)_asm: $(%ULANG%_SRC)
+	# Assembly generation command
+
+.PHONY: run_%LLANG%

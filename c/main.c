@@ -11,7 +11,7 @@ uint64_t count_to_billion()
 
 int main(int argc, char *argv[argc + 1])
 {
-	clock_t t = clock();
+	time_t t = time(NULL);
 
 	uint64_t count = count_to_billion();
 
