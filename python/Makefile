@@ -1,4 +1,4 @@
-# LANG := <INSERT LANGUAGE NAME HERE> 
+# LANG = python
 PYTHON_SRC_FILE := main.py
 
 PYTHON_DIR := $(ROOT_DIR)/python
@@ -21,4 +21,4 @@ $(PYTHON_BIN): $(PYTHON_SRC)
 # $(PYTHON_BIN)_asm: $(PYTHON_SRC)
 # 	# Assembly generation command
 
-.PHONY: run_python
+ALL_BINS += $(PYTHON_BIN)

@@ -20,4 +20,5 @@ $(%ULANG%_BIN)_noopt: $(%ULANG%_SRC)
 $(%ULANG%_BIN)_asm: $(%ULANG%_SRC)
 	# Assembly generation command
 
-.PHONY: run_%LLANG%
+ALL_BINS += $(%ULANG%_BIN)
+ALL_BINS += $(%ULANG%_BIN)_noopt

@@ -1,12 +1,14 @@
 MAKEFILES = $(shell find . -mindepth 2 -name Makefile)
 ROOT_DIR = ${PWD}
 OUT_DIR = $(ROOT_DIR)/out
-LANGUAGES = cpp rust python c
+# ALL_TARGETS
 
 # test:
 # 	@echo $(MAKEFILES)
 
 include $(MAKEFILES)
+
+all: $(ALL_BINS)
 
 # run_unoptimized: run_rust_noopt run_c_noopt
 

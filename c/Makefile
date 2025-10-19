@@ -20,3 +20,6 @@ $(C_BIN)_noopt: $(C_SRC)
 
 $(C_BIN)_asm: $(C_SRC)
 	$(CC) -O0 -g0 -S $^ -o $@.a
+
+ALL_BINS += $(C_BIN)
+ALL_BINS += $(C_BIN)_noopt

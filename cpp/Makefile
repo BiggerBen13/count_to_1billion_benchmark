@@ -19,3 +19,7 @@ $(CPP_BIN)_noopt: $(CPP_SRC)
 
 $(CPP_BIN)_asm: $(CPP_SRC)
 	$(CXX) -O0 -g0 -S $^ -o $@.a
+
+ALL_BINS += $(CPP_BIN)
+ALL_BINS += $(CPP_BIN)_noopt
+
