@@ -18,7 +18,8 @@ $(HS_BIN)_noopt: $(HS_SRC)
 	ghc -dynamic -O0 $^ -o $@ -odir $(OUT_DIR) -hidir $(OUT_DIR)
 
 $(HS_BIN)_asm: $(HS_SRC)
-	ghc -dynamic -g0 -S $^ -o $@.a -hidir $(OUT_DIR)
+	ghc -dynamic -S $^ -o $@.a -hidir $(OUT_DIR)
 
 ALL_BINS += $(HS_BIN)
 ALL_BINS += $(HS_BIN)_noopt
+ALL_ASM += $(HS_BIN)_asm

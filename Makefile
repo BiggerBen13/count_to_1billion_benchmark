@@ -10,6 +10,8 @@ include $(MAKEFILES)
 
 all: $(ALL_BINS)
 
+all_asm: $(ALL_ASM)
+
 # run_unoptimized: run_rust_noopt run_c_noopt
 
 # asm: $(RUST_BIN)_asm $(C_BIN)_asm

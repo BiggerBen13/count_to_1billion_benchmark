@@ -22,4 +22,4 @@ $(CPP_BIN)_asm: $(CPP_SRC)
 
 ALL_BINS += $(CPP_BIN)
 ALL_BINS += $(CPP_BIN)_noopt
-
+ALL_ASM += $(CPP_BIN)_asm
