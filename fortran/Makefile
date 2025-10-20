@@ -18,7 +18,7 @@ $(FORTRAN_BIN)_noopt: $(FORTRAN_SRC)
 	gfortran $^ -O0 -g0 -o $@
 
 $(FORTRAN_BIN)_asm: $(FORTRAN_SRC)
-	gfortran $^ -o -S $@
+	gfortran $^ -S -o $@
 
 ALL_BINS += $(FORTRAN_BIN)
 ALL_BINS += $(FORTRAN_BIN)_noopt
