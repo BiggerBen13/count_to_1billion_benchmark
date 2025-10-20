@@ -22,3 +22,4 @@ $(%ULANG%_BIN)_asm: $(%ULANG%_SRC)
 
 ALL_BINS += $(%ULANG%_BIN)
 ALL_BINS += $(%ULANG%_BIN)_noopt
+ALL_ASM += $(%ULANG%_BIN)_asm
